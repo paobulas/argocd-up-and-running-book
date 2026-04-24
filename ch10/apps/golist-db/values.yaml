@@ -1,4 +1,6 @@
 mariadb:
+  global:
+    defaultStorageClass: "nfs-csi-k8s"
   architecture: "standalone"
   auth:
     database: "golist"
@@ -10,7 +12,5 @@ mariadb:
     tag: "latest"
   primary:
     persistence:
-      storageClass: "nfs-csi-k8s"
-  secondary:
-    persistence:
+      enabled: true
       storageClass: "nfs-csi-k8s"
