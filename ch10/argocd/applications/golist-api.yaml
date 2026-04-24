@@ -5,6 +5,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
   name: backend
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   source:
     path: ch10/apps/golist-api
@@ -13,7 +15,7 @@ spec:
   destination:
     namespace: golist
     server: 'https://kubernetes.default.svc'
-  project: default
+  project: golist
   syncPolicy:
     automated:
       prune: true
