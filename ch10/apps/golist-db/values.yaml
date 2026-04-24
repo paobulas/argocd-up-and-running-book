@@ -4,3 +4,13 @@ mariadb:
     database: "golist"
     username: "golist"
     password: "golist"
+  image:
+    registry: "docker.io"
+    repository: "bitnami/mariadb"
+    tag: "latest"
+  primary:
+    persistence:
+      storageClass: "nfs-csi-k8s"
+  secondary:
+    persistence:
+      storageClass: "nfs-csi-k8s"
