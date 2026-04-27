@@ -37,6 +37,8 @@ spec:
       name: '{{srv}}'
       labels:
         golist-component: '{{srv}}'
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
       source:
